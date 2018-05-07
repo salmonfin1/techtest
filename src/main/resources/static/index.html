@@ -1,0 +1,60 @@
+<html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="app.js"></script>
+  <script src="property.js"></script>
+<body ng-app="properties">
+  <div ng-controller="property as prop">
+    <form>
+      <div class="form-group" style="width:15%">
+        <label for="postcodeInput">Enter postcode</label>
+        <input type="text" class="form-control" ng-model="prop.postcodeOutward" id="postcodeInput"/>
+        <button class="btn btn-primary mb-2" ng-click="prop.postcode()">Get average</button>
+        <input class="form-control" type="text" ng-model="prop.postcodeOutput"/>
+      </div>
+
+      <div class="form-group" style="width:15%">
+        <label for="propertyTypeInputOne">Select first property type</label>
+        <select class="form-control" ng-model="prop.propertyTypeInputOne" id="propertyTypeInputOne">
+          <option>Detached</option>
+          <option>Flat</option>
+          <option>Mansion</option>
+          <option>Terraced</option>
+        </select>
+        <label for="propertyTypeInputTwo">Select second property type</label>
+        <select class="form-control" ng-model="prop.propertyTypeInputTwo" id="propertyTypeInputTwo">
+          <option>Detached</option>
+          <option>Flat</option>
+          <option>Mansion</option>
+          <option>Terraced</option>
+        </select>
+        <button class="btn btn-primary mb-2" ng-click="prop.averagePropertyType()">Get average difference</button>
+        <input class="form-control" type="text" ng-model="prop.differenceOutput"/>
+      </div>
+      <div class="form-group" style="width:15%">
+        <label for="percent">Select percentage</label>
+        <input class="form-control" type="text" ng-model="prop.percent" id="percent"/>
+        <button class="btn btn-primary mb-2" ng-click="prop.mostExpensive()">Most Expensive Properties</button>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Property Type</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="p in prop.expensiveProperties">
+              <td>{{p.propertyType}}</td>
+              <td>{{p.price}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+
+
+
+  </div>
+
+</body>
+</html>

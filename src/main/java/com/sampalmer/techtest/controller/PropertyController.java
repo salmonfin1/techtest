@@ -25,7 +25,7 @@ public class PropertyController {
 
 	@RequestMapping("postcodemean")
 	public @ResponseBody ResponseEntity<Double> meanPostcodeOutward(@RequestParam String postcodeOutward) {
-		Double average = propertyService.getAverageByPostcodeOutward(postcodeOutward);
+		Double average = propertyService.getAverageByPostcodeOutward(postcodeOutward.toUpperCase());
 		return ResponseEntity.ok(average);
 	}
 
