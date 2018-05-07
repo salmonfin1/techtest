@@ -61,12 +61,6 @@
 			<version>0.7.1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.github.tomakehurst</groupId>
-			<artifactId>wiremock</artifactId>
-			<version>2.5.0</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -97,29 +91,6 @@
 						<include>**/*Test.java</include>
 					</includes>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>com.github.eirslett</groupId>
-				<artifactId>frontend-maven-plugin</artifactId>
-				<version>1.6</version>
-				<configuration>
-					<nodeVersion>v8.11.1</nodeVersion>
-					<npmVersion>6.0.0</npmVersion>
-				</configuration>
-				<executions>
-					<execution>
-						<id>install-npm</id>
-						<goals>
-							<goal>install-node-and-npm</goal>
-						</goals>
-					</execution>
-          <execution>
-            <id>npm-install</id>
-            <goals>
-              <goal>npm</goal>
-            </goals>
-          </execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>

@@ -8,7 +8,7 @@ class PropertyClient {
 
 	PropertyClient(port) {
 
-		client = new RESTClient("http://localhost:$port/api/v1/")
+		client = new RESTClient("http://localhost:$port/")
 		client.handler.failure = { resp, data ->
 			resp.data = data
 			return resp
